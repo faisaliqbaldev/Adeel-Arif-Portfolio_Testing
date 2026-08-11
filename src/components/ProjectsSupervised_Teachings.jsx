@@ -26,7 +26,7 @@ const categoryLabels = {
   security: "Security & Web",
 };
 const [activeCategory, setActiveCategory] = useState("all");
-
+// hello
   const visibleProjects =
     activeCategory === "all"
       ? projects
