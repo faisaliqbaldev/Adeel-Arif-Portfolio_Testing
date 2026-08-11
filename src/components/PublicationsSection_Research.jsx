@@ -63,7 +63,7 @@ const [sortBy, setSortBy] = useState("year");
     <section className="max-w-container-max mx-auto px-margin-phone md:px-margin-desktop mb-section-gap">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-8 items-end">
         <div className="md:col-span-8">
-          <h2 className="text-headline-md font-headline-md text-primary">
+          <h2 className="text-section-heading-mobile md:text-section-heading font-display text-primary">
             Published Research Papers
           </h2>
         </div>
@@ -72,7 +72,7 @@ const [sortBy, setSortBy] = useState("year");
           <select
             value={sortBy}
             onChange={(event) => setSortBy(event.target.value)}
-            className="form-select border-border-subtle bg-surface text-body-md font-body-md text-primary rounded py-2 px-4 focus:border-secondary focus:ring-0"
+            className="form-select border-border-subtle bg-surface text-ui font-ui text-primary rounded py-2 px-4 focus:border-secondary focus:ring-0"
           >
             <option value="year">Sort by Year</option>
             <option value="journal">Sort by Journal</option>
@@ -90,20 +90,20 @@ const [sortBy, setSortBy] = useState("year");
               <div className="absolute left-0 top-2 w-1 h-full bg-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div className="flex flex-wrap items-center mb-2 gap-x-3 gap-y-2">
-                <span className="bg-primary-container text-on-primary-container text-label-caps font-label-caps px-2 py-1 rounded">
+                <span className="bg-primary-container text-on-primary-container text-label font-ui px-2 py-1 rounded">
                   {publication.year}
                 </span>
 
-                <span className="text-label-caps font-label-caps text-on-surface-variant">
+                <span className="text-label font-ui text-on-surface-variant">
                   {publication.journal}
                 </span>
               </div>
 
-              <h3 className="text-headline-sm font-headline-sm text-primary mb-2">
+              <h3 className="text-card-heading font-display text-primary mb-2">
                 {publication.title}
               </h3>
 
-              <div className="flex flex-wrap gap-4 text-sm font-body-md text-text-muted">
+              <div className="flex flex-wrap gap-4 text-body font-body text-text-muted">
                 {publication.details.map((detail) => (
                   <span key={detail}>{detail}</span>
                 ))}

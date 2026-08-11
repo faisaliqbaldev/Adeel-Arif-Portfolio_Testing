@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { div } from "framer-motion/client";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,18 +18,19 @@ const Navbar = () => {
     location.pathname === href;
 
   const linkClassName = (href) =>
-    `text-label-caps font-label-caps transition-colors duration-200 pb-1 ${
+    `text-ui font-ui transition-colors duration-200 pb-1 ${
       isActive(href)
         ? "text-secondary border-b-2 border-secondary"
         : "text-on-surface-variant hover:text-secondary"
     }`;
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border-subtle bg-surface">
+    <div className="fixed top-0 z-50 flex justify-center w-full">
+    <header className=" w-[95%] border-b rounded-b-2xl border-border-subtle bg-surface shadow-sm backdrop-blur-md">
       <nav className="mx-auto flex h-15 max-w-container-max items-center justify-between px-margin-phone md:h-20 md:px-margin-desktop">
         <Link
           to="/"
-          className="text-headline-sm font-headline-sm font-bold text-primary"
+          className="text-card-heading font-display text-primary"
         >
           Adeel Arif
         </Link>
@@ -46,7 +48,7 @@ const Navbar = () => {
 
           <a
             href="mailto:adeel.arif@ucp.edu.pk"
-            className="text-label-caps font-label-caps text-on-surface-variant transition-colors duration-200 hover:text-secondary"
+            className="text-ui font-ui text-on-surface-variant transition-colors duration-200 hover:text-secondary"
           >
             Contact
           </a>
@@ -54,7 +56,7 @@ const Navbar = () => {
 
         <Link
           to="/cv"
-          className="hidden rounded-DEFAULT bg-secondary px-6 py-3 text-label-caps font-label-caps text-on-secondary transition-colors hover:bg-secondary/90 md:inline-flex"
+          className="hidden rounded-DEFAULT bg-secondary px-6 py-3 text-ui font-ui text-on-secondary transition-colors hover:bg-secondary/90 md:inline-flex"
         >
           Download CV
         </Link>
@@ -89,7 +91,7 @@ const Navbar = () => {
 
                 <a
                   href="mailto:adeel.arif@ucp.edu.pk"
-                  className="pb-1 text-label-caps font-label-caps text-on-surface-variant transition-colors duration-200 hover:text-secondary"
+                  className="pb-1 text-ui font-ui text-on-surface-variant transition-colors duration-200 hover:text-secondary"
                 >
                   Contact
                 </a>
@@ -99,6 +101,7 @@ const Navbar = () => {
         </div>
       </nav>
     </header>
+    </div>
   );
 };
 

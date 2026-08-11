@@ -7,12 +7,12 @@ const AboutPreview_Home = () => {
           id="about"
         >
           <div className="md:col-span-4">
-            <h2 className="text-label-caps font-label-caps text-secondary uppercase tracking-widest sticky top-16 md:top-32">
+            <h2 className="text-label font-ui text-secondary uppercase tracking-[0.08em] sticky top-16 md:top-32">
               About
             </h2>
           </div>
           <div className="md:col-span-8 space-y-6">
-            <p className="text-headline-sm-mobile md:text-headline-sm font-headline-sm text-primary leading-normal">
+            <p className="text-card-heading-mobile md:text-card-heading font-display text-primary">
               I am an Assistant Professor at the Faculty of Information
               Technology, University of Central Punjab. Holding a PhD in
               Electrical Engineering from Shanghai Jiao Tong University, my
@@ -20,7 +20,7 @@ const AboutPreview_Home = () => {
               autonomous robotics in dynamic environments.
             </p>
             <a
-              className="text-secondary font-label-caps text-label-caps hover:text-primary transition-colors inline-flex items-center gap-1 group"
+              className="text-secondary font-ui text-ui hover:text-primary transition-colors inline-flex items-center gap-1 group"
               href="#contact"
             >
               Learn more about me

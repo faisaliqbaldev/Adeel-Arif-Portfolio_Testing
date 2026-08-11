@@ -9,7 +9,7 @@ const CoursesCoordinated_Teachings = () => {
 
   return (
     <section className="mb-24">
-      <h2 className="mb-8 border-b border-slate-200 pb-4 font-serif text-3xl font-semibold text-slate-950">
+      <h2 className="mb-8 border-b border-border-subtle pb-4 font-display text-section-heading-mobile text-primary md:text-section-heading">
         Courses Coordinated
       </h2>
 
@@ -17,7 +17,7 @@ const CoursesCoordinated_Teachings = () => {
         {courses.map((course) => (
           <span
             key={course}
-            className="rounded border border-slate-200 bg-slate-950/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-slate-950"
+            className="rounded-DEFAULT border border-border-subtle bg-secondary-container px-4 py-2 text-label font-ui uppercase tracking-[0.08em] text-primary"
           >
             {course}
           </span>

@@ -1,32 +1,66 @@
-import React from 'react'
+import { motion } from 'framer-motion';
+import { Award, BadgeCheck, Sparkles } from 'lucide-react';
+
+const awards = [
+  { year: '2015', title: 'Best Project Supervisor Award' },
+  { year: '2016', title: 'Best Project Supervisor Award' },
+];
 
 const Recognitions_Teachings = () => {
-const awards = ["Best Project Supervisor Award — 2015", "Best Project Supervisor Award — 2016"];
-
   return (
-    <section>
-      <h2 className="mb-8 border-b border-slate-200 pb-4 font-serif text-3xl font-semibold text-slate-950">
-        Recognition
-      </h2>
+    <section className="mb-24">
+      <div className="mb-8 flex items-end justify-between gap-6 border-b border-border-subtle pb-4">
+        <div>
+          <span className="mb-2 flex items-center gap-2 text-label font-ui uppercase tracking-[0.12em] text-secondary">
+            <Sparkles size={15} aria-hidden="true" />
+            Recognition
+          </span>
+          <h2 className="font-display text-section-heading-mobile text-primary md:text-section-heading">
+            Honours for teaching excellence
+          </h2>
+        </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {awards.map((award) => (
-          <article
-            key={award}
-            className="flex min-h-56 flex-col justify-center rounded border border-slate-200 bg-slate-100 p-8"
+        <Award className="hidden text-secondary sm:block" size={38} strokeWidth={1.5} aria-hidden="true" />
+      </div>
+
+      <div className="flex flex-col gap-6">
+        {awards.map((award, index) => (
+          <motion.article
+            key={award.year}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.45, delay: index * 0.12 }}
+            whileHover={{ y: -6 }}
+            className="group relative overflow-hidden rounded-DEFAULT p-7 transition-colors hover:border-secondary"
           >
-            <span className="mb-4 text-3xl text-teal-700">✦</span>
+            <div className='flex'>
+              <div className="flex h-full w-auto items-center justify-center rounded-full text-secondary">
+                  <Award size={60} strokeWidth={1.7} aria-hidden="true" />
+                </div>
+            <div className="absolute -right-8 -top-10 h-32 w-32 rounded-full bg-secondary-container opacity-0 transition-opacity duration-300 group-hover:opacity-100" ></div>
 
-            <h3 className="mb-2 font-serif text-2xl font-semibold text-slate-950">
-              {award}
-            </h3>
+            <div className="relative flex h-full w-full flex-col">
+                <span className="absolute z-50 px-3 py-1 text-label font-ui tracking-[0.08em] text-on-surface-variant right-0">
+                  {award.year}
+                </span>
+  
 
-            <p className="text-slate-600">Faculty of Engineering, UCP</p>
-          </article>
+              <h3 className="max-w-sm font-display text-card-heading text-primary">
+                {award.title}
+              </h3>
+
+              <div className="mt-6 flex items-center gap-2 text-body font-body text-on-surface-variant">
+                <BadgeCheck size={18} className="shrink-0 text-secondary" aria-hidden="true" />
+                <span>Faculty of Engineering, UCP</span>
+              </div>
+            </div>
+            </div>
+          </motion.article>
         ))}
       </div>
     </section>
   );
-}
+};
 
-export default Recognitions_Teachings
+export default Recognitions_Teachings;

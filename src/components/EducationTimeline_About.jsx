@@ -20,19 +20,19 @@ const EducationTimeline_About = () => {
 ]
   return (
      <div>
-      <h2 className="text-headline-md font-headline-md text-primary mb-8 border-b border-border-subtle pb-4">Education</h2>
+      <h2 className="text-section-heading-mobile md:text-section-heading font-display text-primary mb-8 border-b border-border-subtle pb-4">Education</h2>
 
       <div className="relative border-l border-primary ml-3 space-y-8">
         {educationData.map((education) => (
           <div key={education.year} className="relative pl-8">
             <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-primary"></div>
-            <span className="text-label-caps font-label-caps text-secondary block mb-1">
+            <span className="text-label font-ui text-secondary block mb-1">
               {education.year}
             </span>
-            <h3 className="text-body-lg font-body-lg font-semibold text-primary">
+            <h3 className="text-lead font-body font-semibold text-primary">
               {education.degree}
             </h3>
-            <p className="text-body-md font-body-md text-on-surface-variant">
+            <p className="text-body font-body text-on-surface-variant">
               {education.institution}
             </p>
           </div>

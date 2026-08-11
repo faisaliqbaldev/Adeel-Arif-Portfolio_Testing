@@ -35,7 +35,7 @@ const CareerTimeline_Home = () => {
 ]
   return (
      <div>
-      <h2 className="text-headline-md font-headline-md text-primary mb-8 border-b border-border-subtle pb-4">Career</h2>
+      <h2 className="text-section-heading-mobile md:text-section-heading font-display text-primary mb-8 border-b border-border-subtle pb-4">Career</h2>
 
       <div className="relative border-l border-primary ml-3 space-y-8">
         {careerData.map((career) => (
@@ -48,7 +48,7 @@ const CareerTimeline_Home = () => {
               }`}
             ></div>
             <span
-              className={`text-label-caps font-label-caps block mb-1 ${
+              className={`text-label font-ui block mb-1 ${
                 career.active
                   ? 'text-secondary'
                   : 'text-on-surface-variant'
@@ -56,10 +56,10 @@ const CareerTimeline_Home = () => {
             >
               {career.period}
             </span>
-            <h3 className="text-body-lg font-body-lg font-semibold text-primary">
+            <h3 className="text-lead font-body font-semibold text-primary">
               {career.role}
             </h3>
-            <p className="text-body-md font-body-md text-on-surface-variant">
+            <p className="text-body font-body text-on-surface-variant">
               {career.organization}
             </p>
           </div>

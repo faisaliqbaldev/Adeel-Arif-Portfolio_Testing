@@ -20,7 +20,7 @@ const ThesisWorkSection_Research = () => {
 
   return (
     <section className="max-w-container-max mx-auto px-margin-phone md:px-margin-desktop mb-section-gap">
-      <h2 className="text-headline-md font-headline-md text-primary border-b border-border-subtle pb-4 mb-8">
+      <h2 className="text-section-heading-mobile md:text-section-heading font-display text-primary border-b border-border-subtle pb-4 mb-8">
         Thesis Work
       </h2>
 
@@ -28,19 +28,19 @@ const ThesisWorkSection_Research = () => {
         {theses.map((thesis) => (
           <article
             key={`${thesis.degree}-${thesis.year}`}
-            className="bg-surface-ivory p-8 border border-border-subtle rounded group hover:border-secondary transition-colors duration-300"
+            className="bg-surface-ivory p-8 border border-border-subtle rounded-DEFAULT group hover:border-secondary transition-colors duration-300"
           >
-            <div className="flex items-center mb-4 space-x-2 text-label-caps font-label-caps text-on-surface-variant">
+            <div className="flex items-center mb-4 space-x-2 text-label font-ui text-on-surface-variant">
               <span className="text-secondary font-bold">{thesis.degree}</span>
               <span>·</span>
               <span>{thesis.year}</span>
             </div>
 
-            <h3 className="text-headline-sm font-headline-sm text-primary mb-4 leading-snug group-hover:text-secondary transition-colors duration-300">
+            <h3 className="text-card-heading font-display text-primary mb-4 group-hover:text-secondary transition-colors duration-300">
               {thesis.title}
             </h3>
 
-            <p className="text-body-md font-body-md text-on-surface-variant flex items-center mt-6">
+            <p className="text-body font-body text-on-surface-variant flex items-center mt-6">
               <span className="material-symbols-outlined text-secondary mr-2 text-sm">
                 school
               </span>

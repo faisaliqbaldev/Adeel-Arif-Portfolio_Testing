@@ -34,11 +34,11 @@ const [activeCategory, setActiveCategory] = useState("all");
 
   return (
     <section className="mb-24">
-      <h2 className="mb-8 border-b border-slate-200 pb-4 font-serif text-3xl font-semibold text-slate-950">
+      <h2 className="mb-8 border-b border-border-subtle pb-4 font-display text-section-heading-mobile text-primary md:text-section-heading">
         Projects Supervised
       </h2>
 
-      <div className="mb-8 flex gap-6 overflow-x-auto border-b border-slate-200 pb-2">
+      <div className="mb-8 flex gap-6 overflow-x-auto border-b border-border-subtle pb-2">
         {categories.map((category) => {
           const isActive = activeCategory === category.id;
 
@@ -47,10 +47,10 @@ const [activeCategory, setActiveCategory] = useState("all");
               key={category.id}
               type="button"
               onClick={() => setActiveCategory(category.id)}
-              className={`whitespace-nowrap border-b-2 pb-2 text-xs font-semibold uppercase tracking-[0.1em] transition-colors ${
+              className={`whitespace-nowrap border-b-2 pb-2 text-ui font-ui transition-colors ${
                 isActive
-                  ? "border-teal-700 text-teal-700"
-                  : "border-transparent text-slate-600 hover:text-teal-700"
+                  ? "border-secondary text-secondary"
+                  : "border-transparent text-on-surface-variant hover:text-secondary"
               }`}
             >
               {category.label}
@@ -63,11 +63,11 @@ const [activeCategory, setActiveCategory] = useState("all");
         {visibleProjects.map((project) => (
           <article
             key={project.title}
-            className="flex min-h-40 flex-col justify-between rounded border border-slate-200 bg-slate-50 p-6 transition-colors hover:border-teal-700"
+            className="flex min-h-40 flex-col justify-between rounded-DEFAULT border border-border-subtle bg-surface-container-low p-6 transition-colors hover:border-secondary"
           >
-            <p className="leading-tight text-slate-950">{project.title}</p>
+            <p className="text-lead font-body text-primary">{project.title}</p>
 
-            <span className="mt-4 text-xs font-semibold uppercase tracking-[0.1em] text-teal-700/70">
+            <span className="mt-4 text-label font-ui uppercase tracking-[0.08em] text-secondary">
               {categoryLabels[project.category]}
             </span>
           </article>

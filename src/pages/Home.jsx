@@ -7,7 +7,7 @@ import FeaturedResearch_Home from "../components/FeaturedResearch_Home";
 
 const Home = () => {
   return (
-    <div className="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+    <div className="bg-background text-on-background font-body min-h-screen flex flex-col">
       <main className="flex-grow pb-section-gap-mobile md:pb-section-gap">
         {/* <!-- Hero Section --> */}
         <HeroSection_Home />
